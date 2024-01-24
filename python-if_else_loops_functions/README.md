@@ -1,0 +1,1 @@
+This repo is my code when learning python.
