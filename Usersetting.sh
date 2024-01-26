@@ -19,6 +19,7 @@ while true ;do
 
     echo "Processing file: $initial_file"
     touch $initial_file
+    echo "#!/usr/bin/python3" => $initial_file
     git add "$initial_file"
     git update-index --chmod=+x "$initial_file"
     
