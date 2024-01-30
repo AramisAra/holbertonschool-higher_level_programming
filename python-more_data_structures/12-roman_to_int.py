@@ -18,6 +18,6 @@ def roman_to_int(roman_string):
                 elif last < elm[1]:
                     num += elm[1] - (last * 2)
 
-                last = elm[1]
+                last = number
 
     return number
