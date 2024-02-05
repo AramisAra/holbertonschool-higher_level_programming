@@ -18,21 +18,18 @@ class Rectangle:
         """
         This is a docstring for the height method.
         """
-        temp = self.__height
-        return temp
+        return self.__height
 
     def height(self, value):
         """
         This is a docstring for the height setter method.
         """
-        height = height(self)
-
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
         else:
-            height = value
+            self.__height = value
 
     def width(self):
         """
@@ -45,11 +42,9 @@ class Rectangle:
         """
         This is a docstring for the width setter method.
         """
-        width = width(self)
-
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
         else:
-            width = value
+            self.__width = value
