@@ -13,6 +13,8 @@ class Rectangle:
         """
         self.__width = width
         self.__height = height
+        self.width = self.__width
+        self.height = self.__height
 
     def height(self):
         """
