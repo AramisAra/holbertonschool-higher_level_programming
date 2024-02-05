@@ -22,7 +22,7 @@ class Rectangle:
         """
         return self.__height
 
-    def height(self, value):
+    def set_height(self, value):
         """
         This is a docstring for the height setter method.
         """
@@ -42,7 +42,7 @@ class Rectangle:
 
         return self.__width
 
-    def width(self, value):
+    def set_width(self, value):
         """
         This is a docstring for the width setter method.
         """
