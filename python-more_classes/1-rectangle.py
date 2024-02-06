@@ -11,29 +11,10 @@ class Rectangle:
         """
         This adding the need atributtes
         """
-        self.__width = width
-        self.__height = height
-        self.width = self.__width
-        self.height = self.__height
+        self.width = width
+        self.height = height
 
-    def height(self):
-        """
-        This is a docstring for the height method.
-        """
-        return self.__height
-
-    def set_height(self, value):
-        """
-        This is a docstring for the height setter method.
-        """
-
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
-
-        self.__height = value
-
+    @property
     def width(self):
         """
         This is a docstring for the width method.
@@ -42,7 +23,8 @@ class Rectangle:
 
         return self.__width
 
-    def set_width(self, value):
+    @width.setter
+    def width(self, value):
         """
         This is a docstring for the width setter method.
         """
@@ -53,3 +35,24 @@ class Rectangle:
             raise ValueError("width must be >= 0")
 
         self.__width = value
+
+    @property
+    def height(self):
+        """
+        This is a docstring for the height method.
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """
+        This is a docstring for the height setter method.
+        """
+
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+
+        self.__height = value
+ 
