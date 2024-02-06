@@ -79,11 +79,16 @@ class Rectangle:
             rect_1 (Rectangle): The first rectangle to compare.
             rect_2 (Rectangle): The second rectangle to compare.
             
+        Returns:
+            Rectangle: The rectangle with the larger area.
+            
+        Raises:
+            TypeError: If either rect_1 or rect_2 is not an instance of Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
-            return TypeError("rect_1 must be an instance of Rectangle")
+            raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
-            return TypeError("rect_2 must be an instance of Rectangle")
+            raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
