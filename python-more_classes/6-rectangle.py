@@ -77,14 +77,14 @@ class Rectangle:
             [rect.append("#")for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
-        return ("".join(rect))
-    
+        return "".join(rect)
+
     def __repr__(self):
         """ Represtion """
-        rect = ("Rectangle(" + str(self.__width))
+        rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) +  ")"
         return rect
-    
+
     def __del__(self):
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
