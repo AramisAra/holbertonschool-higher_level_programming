@@ -13,7 +13,7 @@ class Rectangle:
         """
         This adding the need atributtes
         """
-        self.number_of_instances += 1
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -86,5 +86,5 @@ class Rectangle:
         return rect
     
     def __del__(self):
-        self.number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
