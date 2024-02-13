@@ -1,2 +1,2 @@
 I hate readme files
-I understand way they are needed but why
+I understand why they are needed but why?
