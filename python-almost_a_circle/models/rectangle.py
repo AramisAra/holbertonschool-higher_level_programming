@@ -14,6 +14,16 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initialize a Rectangle object.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
+            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
+            id (int, optional): The unique identifier of the rectangle. Defaults to None.
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -139,8 +149,8 @@ class Rectangle(Base):
         Returns a string representation of the Rectangle object.
         The string includes the id, coordinates (x, y), width, and height.
         """
-        return ("(" + str(self.id) + ")" + " " + str(self.x) + "/" + str(self.y) + " " + "-" + \
-               " " + str(self.width) + "/" + str(self.height))
+        return "(" + str(self.id) + ")" + " " + str(self.x) + "/" + str(self.y) + " " + "-" + \
+               " " + str(self.width) + "/" + str(self.height)
 
 
     def area(self):
