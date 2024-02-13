@@ -135,6 +135,10 @@ class Rectangle(Base):
         self.__y = value
 
     def __str__(self):
+        """
+        Returns a string representation of the Rectangle object.
+        The string includes the id, coordinates (x, y), width, and height.
+        """
         return ("(" + str(self.id) + ")" + " " + str(self.x) + "/" + str(self.y) + " " + "-" + \
                " " + str(self.width) + "/" + str(self.height))
 
