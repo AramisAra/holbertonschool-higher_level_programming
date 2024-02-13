@@ -134,14 +134,19 @@ class Rectangle(Base):
 
         self.__y = value
 
-    def area(self):
-            """
-            Calculate the area of the rectangle.
+    def __str__(self):
+        return ("(" + str(self.id) + ")" + " " + str(self.x) + "/" + str(self.y) + " " + "-" + \
+               " " + str(self.width) + "/" + str(self.height))
 
-            Returns:
-                The area of the rectangle.
-            """
-            return self.width * self.height
+
+    def area(self):
+        """
+        Calculate the area of the rectangle.
+
+        Returns:
+            The area of the rectangle.
+        """
+        return self.width * self.height
 
     def display(self):
         """
