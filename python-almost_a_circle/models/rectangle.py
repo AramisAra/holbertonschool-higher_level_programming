@@ -149,8 +149,8 @@ class Rectangle(Base):
         Returns a string representation of the Rectangle object.
         The string includes the id, coordinates (x, y), width, and height.
         """
-        return "(" + str(self.id) + ")" + " " + str(self.__x) + "/" + str(self.__y) + " " + "-" + \
-               " " + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle]" + " " + "(" + str(self.id) + ")" + " " + str(self.__x) + \
+            "/" + str(self.__y) + " " + "-" + " " + str(self.__width) + "/" + str(self.__height)
 
 
     def area(self):
