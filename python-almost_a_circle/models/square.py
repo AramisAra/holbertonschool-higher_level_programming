@@ -20,8 +20,6 @@ class Square(Rectangle):
             None
         """
         super().__init__(size, size, x, y, id)
-        
-        
 
     def __str__(self):
         """
@@ -87,16 +85,15 @@ class Square(Rectangle):
                     self.y = value
                 else:
                     break
-                
-    def to_dictionary(self):
-            """
-            Returns a dictionary representation of the Rectangle instance.
-            """
-            return{
-                "x": self.x,
-                "y": self.y,
-                "id": self.id,
-                "height": self.height,
-                "width": self.width
-            }
 
+    def to_dictionary(self):
+        """
+        Returns a dictionary representation of the Rectangle instance.
+        """
+        return{
+            "x": self.x,
+            "y": self.y,
+            "id": self.id,
+            "height": self.height,
+            "width": self.width
+        }

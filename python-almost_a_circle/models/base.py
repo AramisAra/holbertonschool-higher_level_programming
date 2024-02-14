@@ -37,9 +37,18 @@ class Base():
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        Save a list of objects to a JSON file.
+
+        Args:
+            list_objs (list): A list of objects.
+
+        Returns:
+            None
+        """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
             if list_objs is None:
@@ -47,11 +56,36 @@ class Base():
             else:
                 list_objs = [object.to_dictionary() for object in list_objs]
                 jsonfile.write(Base.to_json_string(list_objs))
-    
+
     @staticmethod
     def from_json_string(json_string):
+        """
+        Convert a JSON string to a list of dictionaries.
+
+        Args:
+            json_string (str): A JSON string.
+
+        Returns:
+            list: A list of dictionaries.
+        """
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Create a new instance of the class and update its attributes.
 
+        Args:
+            dictionary (dict): A dictionary of attributes.
+
+        Returns:
+            object: A new instance of the class.
+        """
+        if dictionary and dictionary != {}:
+            new = cls(1, 1)
+        else:
+            new = cls(1)
+        new.update(**dictionary)
+        return new

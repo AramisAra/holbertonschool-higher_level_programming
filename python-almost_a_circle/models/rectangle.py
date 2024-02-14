@@ -151,7 +151,7 @@ class Rectangle(Base):
         """
         return "[Rectangle]" + " " + "(" + str(self.id) + ")" + " " + str(self.__x) + \
             "/" + str(self.__y) + " " + "-" + " " + str(self.__width) + "/" + str(self.__height)
-    
+
     def update(self, *args, **kwargs):
         """
         Update the attributes of the Rectangle instance.
@@ -188,7 +188,6 @@ class Rectangle(Base):
                     self.__y = value
                 else:
                     break
-            
 
     def area(self):
         """
@@ -198,18 +197,18 @@ class Rectangle(Base):
             The area of the rectangle.
         """
         return self.width * self.height
-    
+
     def to_dictionary(self):
-            """
-            Returns a dictionary representation of the Rectangle instance.
-            """
-            return{
-                "x": self.x,
-                "y": self.y,
-                "id": self.id,
-                "height": self.height,
-                "width": self.width
-            }
+        """
+        Returns a dictionary representation of the Rectangle instance.
+        """
+        return{
+            "x": self.x,
+            "y": self.y,
+            "id": self.id,
+            "height": self.height,
+            "width": self.width
+        }
 
     def display(self):
         """
@@ -219,4 +218,3 @@ class Rectangle(Base):
             print()
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
-
