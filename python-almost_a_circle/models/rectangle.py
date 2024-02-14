@@ -145,12 +145,28 @@ class Rectangle(Base):
         self.__y = value
 
     def __str__(self):
-        """
+        """=
         Returns a string representation of the Rectangle object.
         The string includes the id, coordinates (x, y), width, and height.
         """
         return "[Rectangle]" + " " + "(" + str(self.id) + ")" + " " + str(self.__x) + \
             "/" + str(self.__y) + " " + "-" + " " + str(self.__width) + "/" + str(self.__height)
+    
+    def update(self, *args):
+        if args:
+            for count, arg in enumerate(args):
+                if count == 0:
+                    self.id = arg
+                elif count == 1:
+                    self.__width = arg
+                elif count == 2:
+                    self.__height = arg
+                elif count == 3:
+                    self.__x = arg
+                elif count == 4:
+                    self.__y = arg
+                else:
+                    continue
 
 
     def area(self):
@@ -170,3 +186,4 @@ class Rectangle(Base):
             print()
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
+
