@@ -34,5 +34,5 @@ class Base():
             str: A JSON string representation of the list of dictionaries.
         """
         if list_dictionaries == None or list_dictionaries == []:
-            return []
+            return str("[]")
         return json.dumps(list_dictionaries)
