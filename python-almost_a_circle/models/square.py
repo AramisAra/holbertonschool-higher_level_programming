@@ -87,3 +87,16 @@ class Square(Rectangle):
                     self.y = value
                 else:
                     break
+                
+    def to_dictionary(self):
+            """
+            Returns a dictionary representation of the Rectangle instance.
+            """
+            return{
+                "x": self.x,
+                "y": self.y,
+                "id": self.id,
+                "height": self.height,
+                "width": self.width
+            }
+
