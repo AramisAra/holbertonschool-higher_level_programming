@@ -159,40 +159,6 @@ class Rectangle(Base):
         Args:
             *args: Variable length argument list containing the new values for the attributes.
                    The order of the arguments should be: id, width, height, x, y.
-            **kwargs: Keyword arguments containing the new values for the attributes.
-        """
-        if args:
-            for count, arg in enumerate(args):
-                if count == 0:
-                    self.id = arg
-                elif count == 1:
-                    self.__width = arg
-                elif count == 2:
-                    self.__height = arg
-                elif count == 3:
-                    self.__x = arg
-                elif count == 4:
-                    self.__y = arg
-                else:
-                    continue
-        elif kwargs:
-            for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                elif key == "width":
-                    self.__width = value
-                elif key == "height":
-                    self.__height = value
-                elif key == "x":
-                    self.__x = value
-                elif key == "y":
-                    self.__y = value
-        """
-        Update the attributes of the Rectangle instance.
-
-        Args:
-            *args: Variable length argument list containing the new values for the attributes.
-                   The order of the arguments should be: id, width, height, x, y.
         """
         if args:
             for count, arg in enumerate(args):
@@ -232,6 +198,18 @@ class Rectangle(Base):
             The area of the rectangle.
         """
         return self.width * self.height
+    
+    def to_dictionary(self):
+            """
+            Returns a dictionary representation of the Rectangle instance.
+            """
+            return{
+                "x": self.x,
+                "y": self.y,
+                "id": self.id,
+                "height": self.height,
+                "width": self.width
+            }
 
     def display(self):
         """
