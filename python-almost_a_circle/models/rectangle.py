@@ -152,7 +152,41 @@ class Rectangle(Base):
         return "[Rectangle]" + " " + "(" + str(self.id) + ")" + " " + str(self.__x) + \
             "/" + str(self.__y) + " " + "-" + " " + str(self.__width) + "/" + str(self.__height)
     
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        """
+        Update the attributes of the Rectangle instance.
+
+        Args:
+            *args: Variable length argument list containing the new values for the attributes.
+                   The order of the arguments should be: id, width, height, x, y.
+            **kwargs: Keyword arguments containing the new values for the attributes.
+        """
+        if args:
+            for count, arg in enumerate(args):
+                if count == 0:
+                    self.id = arg
+                elif count == 1:
+                    self.__width = arg
+                elif count == 2:
+                    self.__height = arg
+                elif count == 3:
+                    self.__x = arg
+                elif count == 4:
+                    self.__y = arg
+                else:
+                    continue
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.__width = value
+                elif key == "height":
+                    self.__height = value
+                elif key == "x":
+                    self.__x = value
+                elif key == "y":
+                    self.__y = value
         """
         Update the attributes of the Rectangle instance.
 
@@ -174,7 +208,21 @@ class Rectangle(Base):
                     self.__y = arg
                 else:
                     continue
-
+        elif kwargs and args != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.__width = value
+                if key == "height":
+                    self.__height = value
+                if key == "x":
+                    self.__x = value
+                if key == "y":
+                    self.__y = value
+                else:
+                    break
+            
 
     def area(self):
         """
