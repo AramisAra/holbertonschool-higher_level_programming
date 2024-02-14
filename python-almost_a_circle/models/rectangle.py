@@ -153,6 +153,13 @@ class Rectangle(Base):
             "/" + str(self.__y) + " " + "-" + " " + str(self.__width) + "/" + str(self.__height)
     
     def update(self, *args):
+        """
+        Update the attributes of the Rectangle instance.
+
+        Args:
+            *args: Variable length argument list containing the new values for the attributes.
+                   The order of the arguments should be: id, width, height, x, y.
+        """
         if args:
             for count, arg in enumerate(args):
                 if count == 0:
