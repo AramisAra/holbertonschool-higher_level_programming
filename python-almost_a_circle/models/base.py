@@ -40,16 +40,7 @@ class Base():
     
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        Saves a list of objects to a JSON file.
-
-        Args:
-            list_objs (list): List of objects to be saved.
-
-        Returns:
-            None
-        """
-        filename = cls.__name__ + "json"
+        filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
             if list_objs is None:
                 jsonfile.write("[]")
