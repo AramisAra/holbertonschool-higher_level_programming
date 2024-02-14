@@ -25,15 +25,15 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
-            """
-            Convert a list of dictionaries to a JSON string.
+        """
+        Convert a list of dictionaries to a JSON string.
 
-            Args:
-                list_dictionaries (list): A list of dictionaries.
+        Args:
+            list_dictionaries (list): A list of dictionaries.
 
-            Returns:
-                str: A JSON string representation of the list of dictionaries.
-            """
-            if list_dictionaries is None or list_dictionaries == []:
-                return "[]"
-            return json.dumps(list_dictionaries)
+        Returns:
+            str: A JSON string representation of the list of dictionaries.
+        """
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
