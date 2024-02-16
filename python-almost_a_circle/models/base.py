@@ -2,6 +2,7 @@
 """ Base Class """
 
 import json
+import csv
 class Base():
     """
     Base class for all other classes in the project.
@@ -16,12 +17,12 @@ class Base():
             id (int): The id of the object. Defaults to None.
         """
 
-        type(self).__nb_objects += 1
-        self.id = type(self).__nb_objects
-        if id != None:
+        if id == None:
             self.id = id
-            __nb_objects = id
-            type(self).__nb_objects -= 1
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -34,7 +35,7 @@ class Base():
         Returns:
             str: A JSON string representation of the list of dictionaries.
         """
-        if list_dictionaries is None or list_dictionaries == []:
+        if list_dictionaries is None or list_dictionaries is []:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -50,12 +51,12 @@ class Base():
             None
         """
         filename = cls.__name__ + ".json"
-        with open(filename, "w") as jsonfile:
-            if list_objs is None:
-                jsonfile.write("[]")
-            else:
-                list_objs = [object.to_dictionary() for object in list_objs]
-                jsonfile.write(Base.to_json_string(list_objs))
+        list_dict = []
+        if list_objs is not None:
+            for obj in list_objs:
+                list_dict.append(obj.to_dictionary())
+        with open(filename, 'w') as f:
+            f.write(cls.to_json_string(list_dict))
 
     @staticmethod
     def from_json_string(json_string):
