@@ -1,99 +1,60 @@
 #!/usr/bin/python3
-""" Class Square """
-
+""" Square class """
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
-    """ Class Square """
+    """Square class inherits from Rectangle class"""
+    # constructor
 
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        Initialize a Square instance.
-
+        """ init method for square class
         Args:
-            size (int): The size of the square.
-            x (int): The x-coordinate of the square's position.
-            y (int): The y-coordinate of the square's position.
-            id (int): The unique identifier of the square.
-
-        Returns:
-            None
+            size (int): size of the square
+            x (int): x position of the square
+            y (int): y position of the square
+            id (int): id of the square
         """
         super().__init__(size, size, x, y, id)
-
+    
     def __str__(self):
-        """
-        Return a string representation of the square.
-
-        Returns:
-            str: The string representation of the square.
-        """
-        return "[Square]" + " " + "(" + str(self.id) + ")" + " " + str(self.x) + \
-            "/" + str(self.y) + " " + "-" + " " + str(self.width)
+        """ string representation of square """
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
-        """Get the size of the square."""
+        """Getter for size."""
         return self.width
 
     @size.setter
     def size(self, value):
-        """
-        Set the size of the square.
-
-        Args:
-            value (int): The size of the square.
-
-        Returns:
-            None
-        """
+        """Setter for size, updates both width and height."""
         self.width = value
         self.height = value
+    
+    def __str__(self):
+        """Returns the string representation of the Square instance."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+
 
     def update(self, *args, **kwargs):
-        """
-        Update the attributes of the Square instance.
-
+        """update method for square class
         Args:
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
-
-        Returns:
-            None
+            args (list): list of arguments
+            kwargs (dict): dictionary of arguments
         """
         if args:
-            for count, arg in enumerate(args):
-                if count == 0:
-                    self.id = arg
-                elif count == 1:
-                    self.size = arg
-                elif count == 2:
-                    self.x = arg
-                elif count == 3:
-                    self.y = arg
-                else:
-                    continue
-        elif kwargs:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
+        else:
             for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                elif key == "size":
-                    self.size = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
-                else:
-                    break
+                setattr(self, key, value)
 
     def to_dictionary(self):
-        """
-        Returns a dictionary representation of the Rectangle instance.
-        """
-        return{
-            "x": self.x,
-            "y": self.y,
-            "id": self.id,
-            "height": self.height,
-            "width": self.width
-        }
+        """ dictionary representation of square """
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
