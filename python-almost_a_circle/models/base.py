@@ -35,7 +35,7 @@ class Base():
         Returns:
             str: A JSON string representation of the list of dictionaries.
         """
-        if list_dictionaries is None or list_dictionaries is []:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -69,7 +69,7 @@ class Base():
         Returns:
             list: A list of dictionaries.
         """
-        if json_string is None or json_string == "[]":
+        if json_string is None or json_string is []:
             return []
         return json.loads(json_string)
 
@@ -84,11 +84,11 @@ class Base():
         Returns:
             object: A new instance of the class.
         """
-        if dictionary and dictionary != {}:
+        if cls.__name__ == "Rectangle":
             new = cls(1, 1)
-        else:
+        elif cls.__name__ == "Square":
             new = cls(1)
-        new.update(**dictionary)
+        cls.update(new, **dictionary)
         return new
 
     @classmethod
