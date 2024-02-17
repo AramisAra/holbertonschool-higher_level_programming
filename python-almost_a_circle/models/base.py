@@ -2,7 +2,6 @@
 """ Base class """
 from os import path
 import json
-import turtle
 
 
 class Base:
@@ -60,32 +59,3 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        turtle.speed(2)
-        for rect in list_rectangles:
-            turtle.penup()
-            turtle.goto(rect.x, rect.y)
-            turtle.pendown()
-            turtle.forward(rect.width)
-            turtle.left(90)
-            turtle.forward(rect.height)
-            turtle.left(90)
-            turtle.forward(rect.width)
-            turtle.left(90)
-            turtle.forward(rect.height)
-            turtle.left(90)
-
-        for square in list_squares:
-            turtle.penup()
-            turtle.goto(square.x, square.y)
-            turtle.pendown()
-            turtle.forward(square.size)
-            turtle.left(90)
-            turtle.forward(square.size)
-            turtle.left(90)
-            turtle.forward(square.size)
-            turtle.left(90)
-            turtle.forward(square.size)
-            turtle.left(90)
