@@ -1,3 +1,3 @@
 -- This listed all the TABLES
 SHOW TABLES
-    FROM ?;
+    FROM @@DATABASE_NAME;
