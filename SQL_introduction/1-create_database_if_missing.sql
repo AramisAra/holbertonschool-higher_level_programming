@@ -1,3 +1,2 @@
--- This create a new database
-DROP DATABASE hbtn_0c_0;
-CREATE DATABASE hbtn_0c_0;
+-- This create a new DATABASE
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
