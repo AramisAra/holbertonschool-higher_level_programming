@@ -1,3 +1,3 @@
--- This listed all the TABLES
+-- This should listed all the tables inside specified DATABASE
 SHOW TABLES
-    FROM mysql;
+    FROM @@database_name;
