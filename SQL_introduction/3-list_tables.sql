@@ -1,3 +1,4 @@
 -- This should listed all the tables inside specified DATABASE
-SHOW TABLES
-    FROM $1;
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = '';
