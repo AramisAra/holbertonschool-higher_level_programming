@@ -12,14 +12,11 @@ if __name__ == '__main__':
                          passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
 
-    SQLQUERY = "SELECT * FROM states WHERE name LIKE %s"
-    userInput = sys.argv[4]
-    params = (userInput + '%',)
-
-    cur.execute(SQLQUERY, params)
+    cur.execute(f"SELECT * \
+                FROM states \
+                WHERE name = '{sys.argv[4]}';")
 
     states = cur.fetchall()
-
     for state in states:
         print(state)
 
