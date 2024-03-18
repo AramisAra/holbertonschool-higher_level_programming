@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+List all the states with the name that start with N
+"""
 import sys
 import MySQLdb
 
