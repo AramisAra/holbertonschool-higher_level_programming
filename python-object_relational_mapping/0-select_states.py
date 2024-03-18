@@ -1,7 +1,9 @@
+""" Import for the file """
 import sys
 import MySQLdb
 
-def State_list(user, passwd, data):
+
+def State_list(user , passwd, data):
     """
     Connects to a MySQL database and prints out a list of states ordered by their ID.
 
@@ -11,7 +13,7 @@ def State_list(user, passwd, data):
     data (str): The name of the database to connect to
     
     Returns:
-    None
+    States
     """
 
     # Connection to database
@@ -35,6 +37,7 @@ def State_list(user, passwd, data):
     db.close()
 
 if __name__ == "__main__":
+    """ This is the main func """
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database>")
         sys.exit(1)
