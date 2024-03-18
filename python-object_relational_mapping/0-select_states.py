@@ -2,8 +2,7 @@
 import sys
 import MySQLdb
 
-
-def State_list(user , passwd, data):
+def state_list(user, passwd, data):
     """
     Connects to a MySQL database and prints out a list of states ordered by their ID.
 
@@ -37,7 +36,6 @@ def State_list(user , passwd, data):
     db.close()
 
 if __name__ == "__main__":
-    """ This is the main func """
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database>")
         sys.exit(1)
@@ -46,4 +44,4 @@ if __name__ == "__main__":
     passwd = sys.argv[2]
     data = sys.argv[3]
 
-    State_list(user, passwd, data)
+    state_list(user, passwd, data)
