@@ -1,9 +1,18 @@
 import sys
 import MySQLdb
 
-
-
 def State_list(user, passwd, data):
+    """
+    Connects to a MySQL database and prints out a list of states ordered by their ID.
+
+    Parameters:
+    user (str): The username for the MySQL database
+    passwd (str): The password for the MySQL database
+    data (str): The name of the database to connect to
+    
+    Returns:
+    None
+    """
 
     # Connection to database
     db = MySQLdb.connect(host='loaclhost', port='3306',
@@ -18,7 +27,7 @@ def State_list(user, passwd, data):
     # This is to fetch the table to print it
     states = cur.fetchall()
 
-    # This is to print the fetch
+    # This is to print the fetched rows
     for state in states:
         print(state)
 
