@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ Import for the file """
 import sys
 import MySQLdb
