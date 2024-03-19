@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    myquery = "SELECT * FROM states WHERE name = %s"
+    myquery = "SELECT * FROM states WHERE BINARY name = %s"
     userInput =  sys.argv[4]
     parms = (userInput + '%',)
 
