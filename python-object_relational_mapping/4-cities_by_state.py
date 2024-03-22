@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     # Executing MySql Query
     cur.execute("SELECT cities.id, cities.name,\
-                states.name FROM cities INNER JOIN states ON\
+                states.name FROM cities JOIN states ON\
                 cities.state_id = states.id ORDER BY cities.id")
 
     # Obtaining Query Result & prints the result in rows
