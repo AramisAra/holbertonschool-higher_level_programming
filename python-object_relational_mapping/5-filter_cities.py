@@ -3,10 +3,9 @@
 takes in the name of a state as an argument
 and lists all cities of that state
 """
-
-
 import MySQLdb as sql
 from sys import argv
+
 if __name__ == '__main__':
     db = sql.connect(host="localhost",
                      port=3306, user=argv[1], passwd=argv[2], db=argv[3])

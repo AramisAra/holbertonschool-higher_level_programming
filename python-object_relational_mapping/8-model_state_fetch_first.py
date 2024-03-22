@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """script that prints the first State object from the database"""
-
-
 import sys
 from sqlalchemy import create_engine
 from model_state import Base, State

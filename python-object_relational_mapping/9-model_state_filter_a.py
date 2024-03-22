@@ -3,12 +3,11 @@
 script that lists all State objects that
 contain the letter a from the database
 """
-
-
 import sys
 from sqlalchemy import create_engine
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
+
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
