@@ -1,18 +1,33 @@
 #!/usr/bin/python3
-"""script that lists all cities with the state"""
-import MySQLdb as sql
+"""
+Script that lists all states with a name starting with N
+from the databse hbtn_0e_0_usa
+"""
+import MySQLdb
 from sys import argv
-3
+
 if __name__ == '__main__':
-    db = sql.connect(host="localhost", port=3306,
-                     user=argv[1], passwd=argv[2], db=argv[3])
+    u_name = argv[1]
+    psw = argv[2]
+    base = argv[3]
+
+    # Connecting to MySQL database
+    db = MySQLdb.connect(host="localhost", user=u_name,
+                         passwd=psw, db=base, port=3306)
+
+    # Creating cursor object
     cur = db.cursor()
-    query = "SELECT cities.id, cities.name, \
-    states.name FROM cities LEFT JOIN states \
-    ON cities.state_id = states.id;"
-    cur.execute(query)
+
+    # Executing MySql Query
+    cur.execute("SELECT cities.id, cities.name,\
+                states.name FROM cities INNER JOIN states ON\
+                cities.state_id = states.id ORDER BY cities.id")
+
+    # Obtaining Query Result & prints the result in rows
     rows = cur.fetchall()
     for row in rows:
         print(row)
+
+    # Clean Up
     cur.close()
     db.close()
